@@ -13,6 +13,7 @@ import javax.swing.JPanel;
 import javax.swing.border.Border;
 
 import com.labouardy.controller.MouseClickedOnBoardCtrl;
+import com.labouardy.controller.MouseClickedOnToolbarCtrl;
 import com.labouardy.model.Circle;
 import com.labouardy.model.Form;
 import com.labouardy.model.Square;
@@ -39,6 +40,8 @@ public class Main {
 		MyCanvas toolbar = new MyCanvas(listOfFormsOfToolBar, TOOLBAR_WIDTH, SCREEN_HEIGHT);
 		window.add(toolbar);
 		
+		MouseClickedOnToolbarCtrl toolbarCtrl=new MouseClickedOnToolbarCtrl(toolbar, listOfFormsOfToolBar);
+		toolbar.addMouseListener(toolbarCtrl);
 		
 		//Create Board panel
 		List<Form> listOfFormsOfBoard = new ArrayList<Form>();
